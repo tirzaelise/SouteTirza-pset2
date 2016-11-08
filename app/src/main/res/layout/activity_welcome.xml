@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_welcome"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/activity_vertical_margin"
+    tools:context="com.example.tirza.soutetirza_pset2.welcomeActivity">
+
+    <!-- Create and place Mad Libs picture -->
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/madlibs"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/picDesc"
+        android:id="@+id/madPicture" />
+
+    <!-- Write introduction text -->
+    <TextView
+        android:text="@string/introduction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/madPicture"
+        android:paddingTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/introText" />
+
+    <!-- Create button to go to next activity -->
+    <Button
+        android:text="@string/start"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/white"
+        android:onClick="toPlaceholder"
+        android:textAllCaps="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/toPlaceButton" />
+
+    <!-- Create dropdown menu to choose preferred story-->
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/toPlaceButton"
+        android:layout_centerHorizontal="true"
+        android:entries="@array/stories"
+        android:prompt="@string/chooseStory"
+        android:id="@+id/chooseStory" />
+</RelativeLayout>

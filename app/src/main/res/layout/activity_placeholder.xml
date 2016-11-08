@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_placeholder"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    android:layout_centerInParent="true"
+    tools:context="com.example.tirza.soutetirza_pset2.placeholderActivity">
+
+    <!-- Create text view with instructions -->
+    <TextView
+        android:text="@string/fillIn"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:id="@+id/fillIn" />
+
+    <!-- Create text view that tells the user how many words are remaining -->
+    <TextView
+        android:text="@string/remaining"
+        android:textSize="17.5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fillIn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:id="@+id/wordsRemaining" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/wordsRemaining"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="50dp">
+
+        <!-- Create screen for user input -->
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:inputType="textPersonName"
+            android:hint="@string/noun"
+            android:ems="10"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/givenWord" />
+
+        <!-- Button to submit the user input -->
+        <Button
+            android:text="@string/ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/givenWord"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:onClick="giveWord"
+            android:id="@+id/okButton" />
+
+    </RelativeLayout>
+</RelativeLayout>
