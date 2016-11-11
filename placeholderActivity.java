@@ -77,45 +77,34 @@ public class placeholderActivity extends AppCompatActivity {
 
     // Convert the string that was given as chosen story to an input stream
     public InputStream stringToStory(String chosenStory) {
-        InputStream is = null;
+        InputStream inputStream = null;
+        String txtFile = "";
 
+        // Get corresponding txt file to chosen story
         switch (chosenStory) {
             case "Clothes":
-                try {
-                    is = getAssets().open("madlib3_clothes.txt");
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                txtFile = "madlib3_clothes.txt";
                 break;
             case "Dance":
-                try {
-                    is = getAssets().open("madlib4_dance.txt");
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                txtFile = "madlib4_dance.txt";
                 break;
             case "Simple":
-                try {
-                    is = getAssets().open("madlib0_simple.txt");
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                txtFile = "madlib0_simple.txt";
                 break;
             case "Tarzan":
-                try {
-                    is = getAssets().open("madlib1_tarzan.txt");
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                txtFile = "madlib1_tarzan.txt";
                 break;
             case "University":
-                try {
-                    is = getAssets().open("madlib2_university.txt");
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                txtFile = "madlib2_university.txt";
                 break;
         }
-        return is;
+
+        // Try to open txt file
+        try {
+            inputStream = getAssets().open(txtFile);
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+        return inputStream;
     }
 }
