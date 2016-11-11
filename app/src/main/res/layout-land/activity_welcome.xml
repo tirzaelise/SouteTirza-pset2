@@ -6,38 +6,51 @@
     android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/activity_vertical_margin"
+    android:padding="10dp"
     tools:context="com.example.tirza.soutetirza_pset2.welcomeActivity">
 
     <!-- Create and place Mad Libs picture -->
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         app:srcCompat="@drawable/madlibs"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
         android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:contentDescription="@string/picDesc"
         android:id="@+id/madPicture" />
 
-    <!-- Write introduction text -->
-    <TextView
-        android:text="@string/introduction"
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:layout_below="@+id/madPicture"
-        android:paddingTop="35dp"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/introText" />
+        android:layout_toRightOf="@id/madPicture"
+        android:layout_toEndOf="@id/madPicture"
+        android:layout_centerVertical="true">
 
-    <!-- Create instructions for the dropdown menu -->
-    <TextView
-        android:text="@string/dropdown"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/introText"
-        android:gravity="center_horizontal"
-        android:paddingTop="15dp"/>
+        <!-- Write introduction text -->
+        <TextView
+            android:text="@string/introduction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:gravity="center"
+            android:id="@+id/introText" />
+
+        <!-- Create instructions for the dropdown menu -->
+        <TextView
+            android:text="@string/dropdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/introText"
+            android:layout_alignStart="@id/introText"
+            android:layout_alignLeft="@id/introText"
+            android:gravity="center"
+            android:paddingTop="15dp"/>
+    </RelativeLayout>
 
     <!-- Create button to go to next activity -->
     <Button
@@ -58,10 +71,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@id/toPlaceButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_toEndOf="@id/madPicture"
+        android:layout_toRightOf="@id/madPicture"
         android:entries="@array/stories"
         android:prompt="@string/chooseStory"
         android:id="@+id/chooseStory" />
-
 </RelativeLayout>
