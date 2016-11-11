@@ -10,17 +10,17 @@
 
     <TextView
         android:text="@string/finishedText"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="25dp"
         android:id="@+id/textView2" />
 
     <TextView
         android:text="TextView"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -31,7 +31,7 @@
         android:layout_marginEnd="30dp"
         android:gravity="center_horizontal"
         android:layout_below="@+id/textView2"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="40dp"
         android:id="@+id/finishedStory" />
 
     <Button
