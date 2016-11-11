@@ -3,6 +3,7 @@ package com.example.tirza.soutetirza_pset2;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -102,9 +103,27 @@ public class placeholderActivity extends AppCompatActivity {
         // Try to open txt file
         try {
             inputStream = getAssets().open(txtFile);
-        } catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return inputStream;
     }
+
+    // Save the current story
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putSerializable("story", story);
+
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+    // Restore the current story
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        story = (Story) savedInstanceState.getSerializable("story");
+        int remainingCount = story.getPlaceholderRemainingCount();
+        replaceCount(remainingCount);
+    }
+
 }
